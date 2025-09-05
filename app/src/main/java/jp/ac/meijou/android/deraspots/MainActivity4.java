@@ -37,6 +37,13 @@ public class MainActivity4 extends AppCompatActivity {
             startActivity(mapIntent);
         });
 
+        binding.officialButton.setOnClickListener(v -> {
+            var intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://nagoya.parco.jp/"));
+            startActivity(intent);
+        });
+
         binding.backButton.setOnClickListener(v -> {
             var intent = new Intent(this, MainActivity3.class);
             startActivity(intent);
