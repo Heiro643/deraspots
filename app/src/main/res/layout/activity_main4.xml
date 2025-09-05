@@ -84,5 +84,16 @@
         app:layout_constraintStart_toStartOf="@id/blackBar"
         app:layout_constraintTop_toBottomOf="@id/textView3"/>
 
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="> Back"
+        android:layout_marginBottom="20dp"
+        tools:layout_editor_absoluteX="37dp"
+        tools:layout_editor_absoluteY="644dp"
+        app:layout_constraintStart_toStartOf="@id/blackBar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

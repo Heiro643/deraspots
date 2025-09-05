@@ -37,5 +37,9 @@ public class MainActivity4 extends AppCompatActivity {
             startActivity(mapIntent);
         });
 
+        binding.backButton.setOnClickListener(v -> {
+            var intent = new Intent(this, MainActivity3.class);
+            startActivity(intent);
+        });
     }
 }
