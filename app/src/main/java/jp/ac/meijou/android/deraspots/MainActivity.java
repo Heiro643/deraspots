@@ -12,7 +12,6 @@ import androidx.core.view.WindowInsetsCompat;
 import jp.ac.meijou.android.deraspots.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
     private ActivityMainBinding binding;
 
     @Override
