@@ -28,9 +28,10 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        int people = Integer.parseInt(binding.editPeople.getText().toString());
+
         binding.buttonSearch.setOnClickListener( view -> {
             var intent = new Intent(this, MainActivity3.class);
-            int people = Integer.valueOf(binding.editPeople.getText().toString());
             intent.putExtra("people",people);
             startActivity(intent);
         });
