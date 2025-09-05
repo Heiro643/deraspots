@@ -9,7 +9,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-
 import jp.ac.meijou.android.deraspots.databinding.ActivityMain2Binding;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -28,9 +27,8 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
-        int people = Integer.parseInt(binding.editPeople.getText().toString());
-
         binding.buttonSearch.setOnClickListener( view -> {
+            int people = Integer.parseInt(binding.editPeople.getText().toString());
             var intent = new Intent(this, MainActivity3.class);
             intent.putExtra("people",people);
             startActivity(intent);
