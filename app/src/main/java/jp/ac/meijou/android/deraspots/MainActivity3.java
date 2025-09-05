@@ -28,7 +28,7 @@ public class MainActivity3 extends AppCompatActivity {
             return insets;
         });
 
-        int people =getIntent().getIntExtra("people",0);
+        int people =getIntent().getIntExtra("people",2);
 
         if (people <= 2){
             binding.itemTextTitle.setText("名古屋PARCO");
