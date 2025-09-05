@@ -1,5 +1,6 @@
 package jp.ac.meijou.android.deraspots;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -25,5 +26,12 @@ public class MainActivity5 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
+
+
+        binding.to3from5Button.setOnClickListener(v -> {
+            var intent = new Intent(this, MainActivity3.class);
+            startActivity(intent);
+        });
+
+    }//
 }

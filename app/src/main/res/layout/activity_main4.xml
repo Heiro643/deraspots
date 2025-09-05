@@ -84,5 +84,26 @@
         app:layout_constraintStart_toStartOf="@id/blackBar"
         app:layout_constraintTop_toBottomOf="@id/textView3"/>
 
+    <ImageButton
+        android:id="@+id/officialButton"
+        android:layout_width="53dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/mapButton"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:srcCompat="@drawable/parco_logo"
+        android:scaleType="fitStart"
+        android:background="@android:color/transparent"/>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="> Back"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="@id/blackBar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
