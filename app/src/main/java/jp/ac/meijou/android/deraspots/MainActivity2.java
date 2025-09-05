@@ -16,8 +16,6 @@ public class MainActivity2 extends AppCompatActivity {
 
     private ActivityMain2Binding binding;
 
-    int people;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
-        people = Integer.parseInt(binding.editPeople.getText().toString());
+        int people = Integer.parseInt(binding.editPeople.getText().toString());
 
         binding.buttonSearch.setOnClickListener( view -> {
             var intent = new Intent(this, MainActivity3.class);
