@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.main.setOnClickListener(view -> {
+        binding.view.setOnClickListener(view -> {
             var intent = new Intent(this, MainActivity2.class);
             startActivity(intent);
         });
