@@ -1,6 +1,7 @@
 package jp.ac.meijou.android.deraspots;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -28,10 +29,23 @@ public class MainActivity5 extends AppCompatActivity {
         });
 
 
-        binding.to3from5Button.setOnClickListener(v -> {
-            var intent = new Intent(this, MainActivity3.class);
+        binding.mapButton2.setOnClickListener(v -> {
+            Uri gmmIntentUri = Uri.parse("geo:35.1635,136.9086?q=名古屋港水族館");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+        });
+
+        binding.officialButton2.setOnClickListener(v -> {
+            var intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://nagoyaaqua.jp/"));
             startActivity(intent);
         });
 
+        binding.backButton2.setOnClickListener(v -> {
+            var intent = new Intent(this, MainActivity3.class);
+            startActivity(intent);
+        });
     }//
 }
