@@ -26,6 +26,25 @@ public class MainActivity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        
+        // EditTextの入力監視
+        binding.editPeople.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                try {
+                    int people = Integer.parseInt(s.toString());
+                    binding.buttonSearch.setEnabled(people > 0);
+                } catch (NumberFormatException e) {
+                    binding.buttonSearch.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable s) {}
+        });
 
         binding.buttonSearch.setOnClickListener( view -> {
             int people = Integer.parseInt(binding.editPeople.getText().toString());
