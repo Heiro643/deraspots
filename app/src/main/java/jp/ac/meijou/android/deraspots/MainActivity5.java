@@ -21,7 +21,6 @@ public class MainActivity5 extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityMain5Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setContentView(R.layout.activity_main5);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -44,8 +43,7 @@ public class MainActivity5 extends AppCompatActivity {
         });
 
         binding.backButton2.setOnClickListener(v -> {
-            var intent = new Intent(this, MainActivity3.class);
-            startActivity(intent);
+            finish();
         });
     }//
 }
