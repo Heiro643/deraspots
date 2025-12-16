@@ -150,7 +150,7 @@ public class MainActivity3 extends AppCompatActivity {
         //0より大きいものを返す
         List<Spot> rankedSpots = new ArrayList<>();
         for (Spot spot : allSpots) {
-            if (spot.score > 0) {
+            if (spot.score >= 0) {
                 rankedSpots.add(spot);
             }
         }
