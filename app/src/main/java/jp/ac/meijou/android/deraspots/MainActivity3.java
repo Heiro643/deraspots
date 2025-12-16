@@ -65,9 +65,54 @@ public class MainActivity3 extends AppCompatActivity {
         if (people >= 1) {
             spots.add(new Spot(
                     "名古屋港水族館",
-                    "　日本最大級の水族館。シャチやイルカの迫力あるショーやペンギンたちに会える人気スポット。家族や友達と楽しめる名古屋の定番おでかけ先です。",
+                    "　名古屋にある、カラフルなレゴブロックの冒険の国。迫力ある乗り物から、自分の手で組み立てるワークショップまで遊びが盛りだくさん。お子様の創造力を刺激する、笑顔あふれるテーマパークです。",
                     R.drawable.nagoya_aquarium1,
                     MainActivity5.class
+            ));
+        }
+
+        if (people >= 0) {
+            spots.add(new Spot(
+                    "レゴランド",
+                    "　日本最大級の水族館。シャチやイルカの迫力あるショーやペンギンたちに会える人気スポット。家族や友達と楽しめる名古屋の定番おでかけ先です。",
+                    R.drawable.lego,
+                    MainActivity6.class
+            ));
+        }
+
+        if (people >= 0) {
+            spots.add(new Spot(
+                    "名古屋城",
+                    "　尾張徳川家の栄華を伝えるランドマーク。壮大な石垣や美しい庭園、重要文化財など見どころが満載。散策しながら歴史を楽しめる、名古屋の定番観光地です。",
+                    R.drawable.nagoya_castle,
+                    MainActivity7.class
+            ));
+        }
+
+        if (people >= 0) {
+            spots.add(new Spot(
+                    "東山動植物園",
+                    "　豊かな自然の中で、多種多様な生き物と触れ合える場所。話題の動物たちや季節の花々、秋の紅葉など魅力が満載。子供から大人まで楽しめる、名古屋の定番お出かけ先です。",
+                    R.drawable.higashi,
+                    MainActivity8.class
+            ));
+        }
+
+        if (people >= 0) {
+            spots.add(new Spot(
+                    "名古屋市科学館",
+                    "　ギネス記録を持つプラネタリウムを備える科学の殿堂。遊びながら学べる展示や実演が豊富で、一日中飽きさせません。家族連れやデートにもおすすめの、名古屋の定番観光地です。",
+                    R.drawable.science,
+                    MainActivity9.class
+            ));
+        }
+
+        if (people >= 0) {
+            spots.add(new Spot(
+                    "ジブリパーク",
+                    "　数々のジブリ作品の舞台を再現した夢のエリア。名作の世界観に包まれながら、展示を見たり、カフェでくつろいだりとゆったり過ごせます。子供から大人まで、ジブリの魔法を感じられる特別な場所です。",
+                    R.drawable.ghibli,
+                    MainActivity10.class
             ));
         }
 
