@@ -75,26 +75,26 @@ public class MainActivity3 extends AppCompatActivity {
                     MainActivity4.class
             ));
         }
-      
+
         if (people >= 1) {
             allSpots.add(new Spot(
                     "名古屋港水族館",
-                    "　名古屋にある、カラフルなレゴブロックの冒険の国。迫力ある乗り物から、自分の手で組み立てるワークショップまで遊びが盛りだくさん。お子様の創造力を刺激する、笑顔あふれるテーマパークです。",
+                    "　日本最大級の水族館。シャチやイルカの迫力あるショーやペンギンたちに会える人気スポット。家族や友達と楽しめる名古屋の定番おでかけ先です。",
                     R.drawable.nagoya_aquarium1,
                     MainActivity5.class
             ));
         }
 
-        if (people >= 0) {
+        if (people >= 2) {
             allSpots.add(new Spot(
                     "レゴランド",
-                    "　日本最大級の水族館。シャチやイルカの迫力あるショーやペンギンたちに会える人気スポット。家族や友達と楽しめる名古屋の定番おでかけ先です。",
+                    "　名古屋にある、カラフルなレゴブロックの冒険の国。迫力ある乗り物から、自分の手で組み立てるワークショップまで遊びが盛りだくさん。お子様の創造力を刺激する、笑顔あふれるテーマパークです。",
                     R.drawable.lego,
                     MainActivity6.class
             ));
         }
 
-        if (people >= 0) {
+        if (people >= 1) {
             allSpots.add(new Spot(
                     "名古屋城",
                     "　尾張徳川家の栄華を伝えるランドマーク。壮大な石垣や美しい庭園、重要文化財など見どころが満載。散策しながら歴史を楽しめる、名古屋の定番観光地です。",
@@ -103,7 +103,7 @@ public class MainActivity3 extends AppCompatActivity {
             ));
         }
 
-        if (people >= 0) {
+        if (people >= 1) {
             allSpots.add(new Spot(
                     "東山動植物園",
                     "　豊かな自然の中で、多種多様な生き物と触れ合える場所。話題の動物たちや季節の花々、秋の紅葉など魅力が満載。子供から大人まで楽しめる、名古屋の定番お出かけ先です。",
@@ -112,7 +112,7 @@ public class MainActivity3 extends AppCompatActivity {
             ));
         }
 
-        if (people >= 0) {
+        if (people >= 1) {
             allSpots.add(new Spot(
                     "名古屋市科学館",
                     "　ギネス記録を持つプラネタリウムを備える科学の殿堂。遊びながら学べる展示や実演が豊富で、一日中飽きさせません。家族連れやデートにもおすすめの、名古屋の定番観光地です。",
@@ -121,7 +121,7 @@ public class MainActivity3 extends AppCompatActivity {
             ));
         }
 
-        if (people >= 0) {
+        if (people >= 1) {
             allSpots.add(new Spot(
                     "ジブリパーク",
                     "　数々のジブリ作品の舞台を再現した夢のエリア。名作の世界観に包まれながら、展示を見たり、カフェでくつろいだりとゆったり過ごせます。子供から大人まで、ジブリの魔法を感じられる特別な場所です。",
@@ -133,11 +133,11 @@ public class MainActivity3 extends AppCompatActivity {
         if (timezone == 2) {
             // spots.add(new Spot("オアシス21", "...", R.drawable.oasis21, MainActivity6.class));
         }
-      
+
         //スコア計算
         for (Spot spot : allSpots) {
             calculateScore(spot, people, relationship, timezone);
-        }        
+        }
         //スコアの高い順で並べ替え
         Collections.sort(allSpots, new Comparator<Spot>() {
             @Override
@@ -210,6 +210,99 @@ public class MainActivity3 extends AppCompatActivity {
 
                 //減点
                 // 夜から(2)は閉館している可能性が高いので大きく減点
+                if (timezone == 2) {
+                    spot.addScore(-10);
+                }
+                break;
+
+            case "レゴランド":
+                //家族(0)と来たら +3点
+                if (relationship == 0) spot.addScore(3);
+                //友達(2)か恋人(1)と来たら +1点
+                if (relationship == 1 || relationship == 2) spot.addScore(1);
+                //3人以上なら +2点
+                if (people >= 3) spot.addScore(2);
+                //昼(1)なら +2点
+                if (timezone == 1) spot.addScore(2);
+
+                //減点
+                // 夜から(2)は閉館しているので大きく減点
+                if (timezone == 2) {
+                    spot.addScore(-10);
+                }
+                break;
+
+            case "名古屋城":
+                //家族(0)と来たら +2点
+                if (relationship == 0) spot.addScore(3);
+                //友達(2)か恋人(1)と来たら +1点
+                if (relationship == 1 || relationship == 2) spot.addScore(1);
+                //3人以上なら +2点
+                if (people >= 3) spot.addScore(2);
+                //2人以下なら +1点
+                if (people <= 2) spot.addScore(1);
+                //朝(0)か昼(1)なら +2点
+                if (timezone == 0 || timezone == 1) spot.addScore(2);
+
+                //減点
+                // 夜から(2)は閉館しているので大きく減点
+                if (timezone == 2) {
+                    spot.addScore(-10);
+                }
+                break;
+
+            case "東山動植物園":
+                //家族(0)と来たら +3点
+                if (relationship == 0) spot.addScore(3);
+                //友達(2)か恋人(1)と来たら +1点
+                if (relationship == 1 || relationship == 2) spot.addScore(1);
+                //3人以上なら +2点
+                if (people >= 3) spot.addScore(2);
+                //2人以下なら +1点
+                if (people <= 2) spot.addScore(1);
+                //朝(0)か昼(1)なら +2点
+                if (timezone == 0 || timezone == 1) spot.addScore(2);
+
+                //減点
+                // 夜から(2)は閉館しているので大きく減点
+                if (timezone == 2) {
+                    spot.addScore(-10);
+                }
+                break;
+
+            case "名古屋市科学館":
+                //家族(0)と来たら +3点
+                if (relationship == 0) spot.addScore(3);
+                //友達(2)か恋人(1)と来たら +1点
+                if (relationship == 1 || relationship == 2) spot.addScore(1);
+                //3人以上なら +1点
+                if (people >= 3) spot.addScore(2);
+                //2人以下なら +2点
+                if (people <= 2) spot.addScore(1);
+                //朝(0)か昼(1)なら +2点
+                if (timezone == 0 || timezone == 1) spot.addScore(2);
+
+                //減点
+                // 夜から(2)は閉館しているので大きく減点
+                if (timezone == 2) {
+                    spot.addScore(-10);
+                }
+                break;
+
+            case "ジブリパーク":
+                //家族(0)と来たら +3点
+                if (relationship == 0) spot.addScore(3);
+                //友達(2)か恋人(1)と来たら +1点
+                if (relationship == 1 || relationship == 2) spot.addScore(1);
+                //3人以上なら +2点
+                if (people >= 3) spot.addScore(2);
+                //2人以下なら +1点
+                if (people <= 2) spot.addScore(1);
+                //朝(0)か昼(1)なら +2点
+                if (timezone == 0 || timezone == 1) spot.addScore(2);
+
+                //減点
+                // 夜から(2)は閉館しているので大きく減点
                 if (timezone == 2) {
                     spot.addScore(-10);
                 }
