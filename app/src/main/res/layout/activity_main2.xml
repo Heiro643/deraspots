@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+    <!-- 追加: 上部右側に登録画面へ遷移するボタン -->
+    <Button
+        android:id="@+id/buttonOpenRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登録"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <!-- 質問1: 人数入力 -->
     <TextView
         android:id="@+id/label_people"

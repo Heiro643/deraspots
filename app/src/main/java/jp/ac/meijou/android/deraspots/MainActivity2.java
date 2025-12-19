@@ -72,5 +72,11 @@ public class MainActivity2 extends AppCompatActivity {
             // MainActivity3を開始
             startActivity(intent);
         });
+
+        // 追加: 登録画面（MainActivity11）を開くボタンの処理
+        binding.buttonOpenRegister.setOnClickListener(v -> {
+            Intent i = new Intent(this, MainActivity11.class);
+            startActivity(i);
+        });
     }
 }

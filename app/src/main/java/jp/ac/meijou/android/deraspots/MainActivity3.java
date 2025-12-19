@@ -31,6 +31,11 @@ public class MainActivity3 extends AppCompatActivity {
             finish();
         });
 
+        // 追加: 上部の登録ボタンで MainActivity11 を開く
+        binding.buttonOpenRegister.setOnClickListener(v -> {
+            startActivity(new Intent(this, MainActivity11.class));
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
